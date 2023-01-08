@@ -1,0 +1,290 @@
+
+
+#wrapper {
+  background-image: linear-gradient(180.96deg, #39289f 0.82%, #422f9c 129.1%);
+  backdrop-filter: blur(7px);
+  height: 753px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  width: 100%;
+}
+
+.reset-button{
+  border: none;
+}
+
+.gamers-div {
+  width: 700px;
+  max-width: 1400px;
+  margin: auto;
+  color: #fff;
+  backdrop-filter: blur(7px);
+  background-color: #39289f;
+  padding: 50px;
+  /*  */
+  /* box-shadow: 10px 8px 5px #fff; */
+
+  /* linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), */
+}
+
+.gamer-first-div{
+  width: 900px;
+  border: 2px solid #fff;
+  margin: auto;
+  padding: 100px;
+}
+
+.form{
+  text-align: center;
+}
+
+button i{
+  color: #39289f;
+}
+
+#gamer {
+  height: 753px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.form input[type="number"] {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+ 
+}
+
+.lastResult {
+  color: white;
+  padding: 3px;
+}
+
+
+.forminput {
+  padding: 7px;
+  margin-top: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+
+.reset-button {
+  border: none;
+}
+
+/* index.html */
+.home-first-div {
+  display: flex;
+  width: 800px;
+  margin: auto;
+  align-items: center;
+  height: 700px;
+  justify-content: space-around;
+}
+
+.home-img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.game-intro {
+  color: #fff;
+}
+
+@media (max-width: 1280px) {
+  .home-first-div {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+    height: 700px;
+    justify-content: space-around;
+  }
+
+  .home-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+  }
+
+  .gamers-div {
+    width: 900px;
+    max-width: 1400px;
+    margin: auto;
+    background-color: #fff;
+    padding: 50px;
+    /* linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), */
+  }
+  
+  #gamer {
+    height: 753px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gamers-div h1{
+    font-size: 3em;
+   
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+
+
+
+   .gamers-div p{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+
+  label{
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-first-div {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    align-items: center;
+    height: 700px;
+    justify-content: space-around;
+  }
+
+  .home-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+  }
+#gamer{
+  height: 600px;
+}
+body{
+  height: 600px;
+}
+  
+}
+
+@media (max-width: 769px) {
+  #gamer {
+    width: 300px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .guessSubmit {
+ 
+    margin-top:20px
+  }
+
+  .gamers-div h1{
+    font-size: 34px;
+   
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+
+
+
+   .gamers-div p{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+
+  label{
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .home-first-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    align-items: center;
+    height: 600px;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  .home-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    margin-top: 40px;
+  }
+
+  .home-img1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 40px;
+  }
+
+  .home-img2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right: 40px;
+  }
+
+  body {
+    height: 700px;
+  }
+
+  .intro-div {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 120px;
+  }
+
+  .intro-div p {
+    text-align: center;
+  }
+
+  .gamers-div {
+    width: 100%;
+    max-width: 700px;
+    margin: 10px;
+    background-color: #fff;
+    padding: 30px;
+
+  
+  }
+
+  #gamer {
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+  }
+
+
+}

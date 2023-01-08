@@ -1,190 +1,45 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Number Guess</title>
-        <style>
-            html {
-              font-family: sans-serif;
-            }
-      
-            body {
-              width: 50%;
-              max-width: 800px;
-              min-width: 480px;
-              margin: 0 auto;
-            }
-            
-            .form input[type="number"] {
-              width: 200px;
-            }
-      
-            .lastResult {
-              color: white;
-              padding: 3px;
-            }
-            .formsubmit{
-                padding:10px;
-                background-color: black;
-                color:white;
-                border-radius: 20px;
-            }
-            .forminput{
-                padding: 10px;
-            }
-            .guessSubmit {
-                background-color: blueviolet;
-                color: #fff;
-                cursor: pointer;
-            }
-          </style>
-    </head>
-    <body>
-        <h1>Number guessing game</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
-    
-        <div class="form">
-          <label for="guessField">Enter a guess: </label>
-          <input type="number" min="1" max="100" required id="guessField" class="guessField forminput">
-          <input type="submit" value="Submit guess" class="guessSubmit formsubmit">
+  <!--bootstrap-->
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+<!--fontawesome-->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+  media="all"
+/>
+
+<!--my css and js-->
+<link href="index.css" rel="stylesheet" type="text/css" />    
+    <title>Number Guess Home Page</title>
+</head>
+<body>
+    <section id="wrapper">
+       <div class="home-first-div">
+        <img src="https://res.cloudinary.com/blackgirlmagic/image/upload/v1673198820/NumberGuessing%20Game/450-removebg-preview_bmnvme.png" alt="image of a boy" class="home-img home-img1"/>
+
+        <div class="intro-div">
+            <h4 class="game-intro">
+                Hey you wanna play game?
+            </h4>
+           <p>
+            <a href="games.html">
+                <button class="btn btn-light mt-3">Click Me!<i class="fa-solid fa-face-smile ms-2"></i></button>
+               </a>
+           </p>
         </div>
-    
-        <div class="resultParas"><hr>
-          <p class="guesses"></p><hr>
-          <p class="lastResult"></p>
-          <p class="lowOrHi"></p>
-        </div>
-    
-    </body>
-    <script>
 
-// let randomNumber= (min, max) => {
-//   min = Math.ceil();
-//     max = Math.floor();
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-//       function randomNumber(min, max) {
-//     min = Math.ceil(1);
-//     max = Math.floor(100);
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-//       let randomNumber = Math.floor(Math.random() * 100) + 1;
-//         // let randomNumber = random < 101
-
-function randomNumber(maxLimit = 100, minLimit = 1){
-let rand = Math. random() * maxLimit;
-console. log(rand); // say 99.81321410836433.
-​
-rand = Math. floor(rand); // 99.
-​
-return rand;
-}
-       
-// let randomNumber = Math.floor(Math.random( maxLimit = 100) * 100) + 1;     
-const guesses = document.querySelector('.guesses');
-const lastResult = document.querySelector('.lastResult');
-const lowOrHi = document.querySelector('.lowOrHi');
-
-const guessSubmit = document.querySelector('.guessSubmit');
-const guessField = document.querySelector('.guessField');
-
-let guessCount = 1;
-let resetButton;
-
-function checkGuess() {
-  const userGuess = Number(guessField.value);
-  // const  userGuess = Guess > 0 || Guess < 101;
-  
-  
-  if (guessCount === 1) {
-    guesses.textContent = "Previous guesses: " ;
-  }
-  guesses.textContent +=  `${userGuess} ` ;
-
-  if (userGuess === randomNumber) {
-    lastResult.textContent = 'Congratulations! You got it right!';
-    lastResult.style.backgroundColor = 'green';
-    lowOrHi.textContent = '';
-    setGameOver();
-  } 
-  
-  else if (guessCount === 9) {
-    lastResult.textContent = '!!! One more attempts!!!!';
-    lastResult.style.backgroundColor = 'yellowgreen';
-    lastResult.style.color = 'black';
-    lowOrHi.textContent = '';
-   
-  } 
-  
-  else if (guessCount === 10) {
-    lastResult.textContent = '!!!GAME OVER!!!';
-    lastResult.style.backgroundColor = 'red';
-    lastResult.style.color = 'white';
-    lowOrHi.textContent = '';
-    setGameOver();
-  }
-  
-  else {
-    lastResult.textContent = 'Wrong!';
-    lastResult.style.backgroundColor = 'red';
-
-    if(userGuess < 1 || userGuess > 100){
-      lowOrHi.textContent = 'only numbers between 1 and 100!';
-    }
-    if (userGuess < randomNumber) {
-      lowOrHi.textContent = 'Last guess was too low!';
-    }
-    
-    else if (userGuess > randomNumber) {
-      lowOrHi.textContent = 'Last guess was too high!';
-    }
-  }
-
-  guessCount++;
-  guessField.value = '';
-  guessField.focus();
-}
-
-
-guessSubmit.addEventListener('click', checkGuess);
-
-function setGameOver() {
-  guessField.disabled = true;
-  guessSubmit.disabled = true;
-  resetButton = document.createElement('button');
-  resetButton.textContent = 'Start new game';
-  document.body.append(resetButton);
-  resetButton.addEventListener('click', resetGame);
-}
-
-function resetGame() {
-  guessCount = 1;
-
-  const resetParas = document.querySelectorAll('.resultParas p');
-  for (const resetPara of resetParas) {
-    resetPara.textContent = '';
-  }
-
-  resetButton.parentNode.removeChild(resetButton);
-
-  guessField.disabled = false;
-  guessSubmit.disabled = false;
-  guessField.value = '';
-  guessField.focus();
-
-  lastResult.style.backgroundColor = 'white';
-
-//   let randomNumber= (min, max) => {
-//   min = Math.ceil();
-//     max = Math.floor();
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
-  // randomNumber = Math.floor(Math.random() * 100) + 1;
-}
-
-    </script>
+        <img src="https://res.cloudinary.com/blackgirlmagic/image/upload/v1673198990/NumberGuessing%20Game/464-removebg-preview_ok3j5o.png" alt="image of a girl" class="home-img home-img2"/>
+       </div>
+    </section>
+</body>
 </html>
