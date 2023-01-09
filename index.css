@@ -1,7 +1,7 @@
 #wrapper {
   background-image: linear-gradient(180.96deg, #39289f 0.82%, #422f9c 129.1%);
   backdrop-filter: blur(7px);
-  height: 753px;
+  height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -89,7 +89,7 @@ button i {
   width: 1200px;
   margin: auto;
   align-items: center;
-  height: 700px;
+  height: 600px;
   justify-content: space-around;
 }
 
