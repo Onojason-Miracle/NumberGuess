@@ -97,7 +97,7 @@ button i {
   height: 300px;
   width: 300px;
   object-fit: cover;
-  animation: shake 1.5s;
+  animation: shake 6.5s;
 
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
