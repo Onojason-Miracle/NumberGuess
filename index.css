@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   object-fit: cover;
   width: 100%;
+  overflow: hidden;
 }
 
 .reset-button {
@@ -178,7 +179,7 @@ button i {
   }
 
   .intro-div {
-    width: 100%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -410,12 +411,17 @@ button i {
     position: absolute;
     bottom: 0;
     padding-bottom: 120px;
-    width: 100%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .game-intro{
+    text-align: center;
+   
   }
 
   .form input[type="number"] {
